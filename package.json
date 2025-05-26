@@ -1,0 +1,31 @@
+{
+  "name": "mifcom-landing-page",
+  "version": "1.0.0",
+  "description": "STARTPLATZ × MIFCOM AI Workstations Landing Page",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server -p 8000 -o",
+    "dev": "npx http-server -p 8000 -c-1 -o",
+    "serve": "python server.py",
+    "test": "echo \"No tests configured yet\"",
+    "lighthouse": "lighthouse http://localhost:8000 --view"
+  },
+  "keywords": [
+    "landing-page",
+    "mifcom",
+    "startplatz",
+    "ai-workstations",
+    "rtx",
+    "gpu"
+  ],
+  "author": "MIFCOM Development Team",
+  "license": "Proprietary",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "lighthouse": "^11.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mifcom/startplatz-landing"
+  }
+} 

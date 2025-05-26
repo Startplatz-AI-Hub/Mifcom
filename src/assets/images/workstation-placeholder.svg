@@ -1,0 +1,62 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- PC Case -->
+  <defs>
+    <linearGradient id="caseGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3A3A3A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1A1A1A;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="glassGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#A3D55F;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#A3D55F;stop-opacity:0.1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Main case body -->
+  <rect x="100" y="50" width="200" height="200" rx="5" fill="url(#caseGradient)" stroke="#2A2A2A" stroke-width="2"/>
+  
+  <!-- Front panel -->
+  <rect x="110" y="60" width="180" height="180" rx="3" fill="#2A2A2A"/>
+  
+  <!-- Glass side panel with RGB -->
+  <rect x="120" y="70" width="160" height="160" rx="2" fill="url(#glassGradient)" stroke="#A3D55F" stroke-width="1" opacity="0.8"/>
+  
+  <!-- RGB lighting strips -->
+  <line x1="125" y1="75" x2="125" y2="225" stroke="#A3D55F" stroke-width="3" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+  </line>
+  <line x1="275" y1="75" x2="275" y2="225" stroke="#A3D55F" stroke-width="3" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+  </line>
+  
+  <!-- Front IO panel -->
+  <rect x="140" y="80" width="120" height="30" rx="2" fill="#1A1A1A"/>
+  
+  <!-- USB ports -->
+  <rect x="150" y="88" width="20" height="8" fill="#0080BB"/>
+  <rect x="175" y="88" width="20" height="8" fill="#0080BB"/>
+  <rect x="200" y="88" width="20" height="8" fill="#0080BB"/>
+  
+  <!-- Power button -->
+  <circle cx="240" cy="92" r="8" fill="#2A2A2A" stroke="#A3D55F" stroke-width="2">
+    <animate attributeName="fill" values="#2A2A2A;#A3D55F;#2A2A2A" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Ventilation grilles -->
+  <g opacity="0.5">
+    <line x1="140" y1="130" x2="260" y2="130" stroke="#1A1A1A" stroke-width="2"/>
+    <line x1="140" y1="140" x2="260" y2="140" stroke="#1A1A1A" stroke-width="2"/>
+    <line x1="140" y1="150" x2="260" y2="150" stroke="#1A1A1A" stroke-width="2"/>
+    <line x1="140" y1="160" x2="260" y2="160" stroke="#1A1A1A" stroke-width="2"/>
+  </g>
+  
+  <!-- GPU visible through glass -->
+  <rect x="160" y="180" width="80" height="20" rx="2" fill="#4A4A4A"/>
+  <text x="200" y="194" text-anchor="middle" fill="#A3D55F" font-family="Arial" font-size="10" font-weight="bold">RTX</text>
+  
+  <!-- Base/feet -->
+  <rect x="120" y="250" width="40" height="10" rx="2" fill="#2A2A2A"/>
+  <rect x="240" y="250" width="40" height="10" rx="2" fill="#2A2A2A"/>
+  
+  <!-- Reflection/shine effect -->
+  <rect x="100" y="50" width="200" height="100" rx="5" fill="url(#glassGradient)" opacity="0.2"/>
+</svg> 

@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STARTPLATZ × MIFCOM - RTX 50 Serie KI-Workstations</title>
+    <style>
+        /* Print Setup */
+        @page {
+            size: A4;
+            margin: 0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: #1A1A1A;
+            line-height: 1.5;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        
+        /* A4 Container */
+        .flyer {
+            width: 210mm;
+            height: 297mm;
+            position: relative;
+            overflow: hidden;
+            background: white;
+        }
+        
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%);
+            color: white;
+            padding: 20mm 15mm 15mm;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -100mm;
+            right: -50mm;
+            width: 200mm;
+            height: 200mm;
+            background: radial-gradient(circle, #A3D55F 0%, transparent 70%);
+            opacity: 0.1;
+        }
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -80mm;
+            left: -40mm;
+            width: 150mm;
+            height: 150mm;
+            background: radial-gradient(circle, #0080BB 0%, transparent 70%);
+            opacity: 0.1;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .logos {
+            display: flex;
+            align-items: center;
+            gap: 10mm;
+            margin-bottom: 10mm;
+        }
+        
+        .logo {
+            height: 12mm;
+            object-fit: contain;
+        }
+        
+        .logo-separator {
+            font-size: 20pt;
+            color: #A3D55F;
+            font-weight: bold;
+        }
+        
+        .headline {
+            font-size: 32pt;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 5mm;
+            letter-spacing: -0.5mm;
+        }
+        
+        .headline .highlight {
+            background: linear-gradient(135deg, #A3D55F 0%, #0080BB 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subheadline {
+            font-size: 14pt;
+            opacity: 0.9;
+            margin-bottom: 8mm;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: #A3D55F;
+            color: #0A0A0A;
+            padding: 2mm 8mm;
+            border-radius: 20mm;
+            font-weight: 700;
+            font-size: 11pt;
+            letter-spacing: 0.5mm;
+        }
+        
+        /* Benefits Bar */
+        .benefits-bar {
+            background: #F5F5F5;
+            padding: 8mm 15mm;
+            display: flex;
+            justify-content: space-around;
+            border-bottom: 2px solid #A3D55F;
+        }
+        
+        .benefit {
+            text-align: center;
+            flex: 1;
+        }
+        
+        .benefit-value {
+            font-size: 20pt;
+            font-weight: 800;
+            color: #A3D55F;
+            display: block;
+        }
+        
+        .benefit-label {
+            font-size: 9pt;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.3mm;
+        }
+        
+        /* Main Content */
+        .content {
+            padding: 12mm 15mm;
+        }
+        
+        /* Products Grid */
+        .products-title {
+            text-align: center;
+            font-size: 20pt;
+            font-weight: 800;
+            margin-bottom: 8mm;
+            color: #1A1A1A;
+        }
+        
+        .products {
+            display: flex;
+            gap: 8mm;
+            margin-bottom: 12mm;
+        }
+        
+        .product {
+            flex: 1;
+            border: 1.5pt solid #E0E0E0;
+            border-radius: 4mm;
+            padding: 8mm;
+            text-align: center;
+            position: relative;
+            background: white;
+            transition: all 0.3s;
+        }
+        
+        .product.featured {
+            border-color: #A3D55F;
+            border-width: 2pt;
+            background: linear-gradient(to bottom, rgba(163, 213, 95, 0.05) 0%, white 50%);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: -3mm;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #A3D55F;
+            color: #0A0A0A;
+            padding: 1mm 6mm;
+            border-radius: 10mm;
+            font-size: 8pt;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        
+        .product-gpu {
+            font-size: 16pt;
+            font-weight: 800;
+            color: #0080BB;
+            margin-bottom: 2mm;
+        }
+        
+        .product-specs {
+            font-size: 9pt;
+            color: #666;
+            margin-bottom: 5mm;
+            line-height: 1.4;
+        }
+        
+        .product-specs strong {
+            color: #1A1A1A;
+            display: block;
+        }
+        
+        .product-price-label {
+            font-size: 8pt;
+            color: #666;
+            text-transform: uppercase;
+            display: block;
+        }
+        
+        .product-price {
+            font-size: 22pt;
+            font-weight: 800;
+            color: #A3D55F;
+            margin-bottom: 1mm;
+        }
+        
+        .product-savings {
+            font-size: 10pt;
+            color: #0080BB;
+            font-weight: 600;
+        }
+        
+        /* Features Section */
+        .features {
+            background: #F9F9F9;
+            border-radius: 4mm;
+            padding: 8mm;
+            margin-bottom: 10mm;
+        }
+        
+        .features-title {
+            font-size: 14pt;
+            font-weight: 700;
+            margin-bottom: 5mm;
+            text-align: center;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4mm;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 3mm;
+            font-size: 9pt;
+        }
+        
+        .feature-icon {
+            color: #A3D55F;
+            font-size: 14pt;
+            font-weight: bold;
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, #1A1A1A 0%, #0A0A0A 100%);
+            color: white;
+            padding: 10mm 15mm;
+            text-align: center;
+            border-radius: 4mm;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: -50mm;
+            left: -50mm;
+            width: 100mm;
+            height: 100mm;
+            background: radial-gradient(circle, #A3D55F 0%, transparent 70%);
+            opacity: 0.1;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta-title {
+            font-size: 18pt;
+            font-weight: 800;
+            margin-bottom: 3mm;
+        }
+        
+        .cta-subtitle {
+            font-size: 11pt;
+            opacity: 0.9;
+            margin-bottom: 8mm;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 8mm;
+        }
+        
+        .contact-item {
+            text-align: center;
+        }
+        
+        .contact-label {
+            font-size: 8pt;
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 0.3mm;
+        }
+        
+        .contact-value {
+            font-size: 12pt;
+            font-weight: 600;
+            color: #A3D55F;
+        }
+        
+        .promo-banner {
+            background: #A3D55F;
+            color: #0A0A0A;
+            display: inline-block;
+            padding: 3mm 10mm;
+            border-radius: 3mm;
+            font-size: 14pt;
+            font-weight: 800;
+            letter-spacing: 0.5mm;
+        }
+        
+        /* Footer */
+        .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 5mm 15mm;
+            background: #F5F5F5;
+            font-size: 8pt;
+            color: #666;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        /* Screen styles */
+        @media screen {
+            body {
+                background: #E0E0E0;
+                padding: 20px;
+            }
+            
+            .flyer {
+                margin: 0 auto;
+                box-shadow: 0 0 20px rgba(0,0,0,0.3);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="flyer">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-content">
+                <div class="logos">
+                    <img src="src/assets/icons/aihublogo.png" alt="STARTPLATZ AI Hub" class="logo">
+                    <span class="logo-separator">×</span>
+                    <img src="src/assets/icons/Logo_Rechteck_white.png" alt="MIFCOM" class="logo">
+                </div>
+                
+                <h1 class="headline">
+                    Beschleunigen Sie Ihre KI-Entwicklung<br>
+                    mit <span class="highlight">RTX 50 Serie</span>
+                </h1>
+                
+                <p class="subheadline">
+                    Next-Generation NVIDIA Blackwell Architektur Workstations<br>
+                    konfiguriert für maximale KI/ML Performance
+                </p>
+                
+                <span class="badge">100€ STARTGUTHABEN FÜR STARTPLATZ MITGLIEDER</span>
+            </div>
+        </div>
+        
+        <!-- Benefits Bar -->
+        <div class="benefits-bar">
+            <div class="benefit">
+                <span class="benefit-value">3,2×</span>
+                <span class="benefit-label">Schnelleres Training</span>
+            </div>
+            <div class="benefit">
+                <span class="benefit-value">75%</span>
+                <span class="benefit-label">Niedrigere TCO</span>
+            </div>
+            <div class="benefit">
+                <span class="benefit-value">32GB</span>
+                <span class="benefit-label">GDDR7 VRAM</span>
+            </div>
+            <div class="benefit">
+                <span class="benefit-value">100%</span>
+                <span class="benefit-label">Datenkontrolle</span>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="content">
+            <!-- Products -->
+            <h2 class="products-title">Wählen Sie Ihre Konfiguration</h2>
+            
+            <div class="products">
+                <div class="product">
+                    <div class="product-gpu">RTX 5070</div>
+                    <div class="product-specs">
+                        <strong>KI Explorer</strong>
+                        12GB GDDR7 • 6.144 CUDA<br>
+                        Intel Core Ultra 7 • 32GB DDR5<br>
+                        2TB NVMe Gen5
+                    </div>
+                    <span class="product-price-label">Ab</span>
+                    <div class="product-price">€3.999</div>
+                    <div class="product-savings">+ 100€ Bonus</div>
+                </div>
+                
+                <div class="product featured">
+                    <span class="product-badge">EMPFOHLEN</span>
+                    <div class="product-gpu">RTX 5080</div>
+                    <div class="product-specs">
+                        <strong>KI Professional</strong>
+                        16GB GDDR7 • 10.752 CUDA<br>
+                        Intel Core Ultra 9 • 64GB DDR5<br>
+                        4TB NVMe Gen5
+                    </div>
+                    <span class="product-price-label">Ab</span>
+                    <div class="product-price">€5.999</div>
+                    <div class="product-savings">+ 100€ Bonus</div>
+                </div>
+                
+                <div class="product">
+                    <div class="product-gpu">RTX 5090</div>
+                    <div class="product-specs">
+                        <strong>KI Enterprise</strong>
+                        32GB GDDR7 • 21.760 CUDA<br>
+                        AMD Ryzen 9 9950X • 128GB<br>
+                        8TB NVMe RAID
+                    </div>
+                    <span class="product-price-label">Ab</span>
+                    <div class="product-price">€9.999</div>
+                    <div class="product-savings">+ 100€ Bonus</div>
+                </div>
+            </div>
+            
+            <!-- Features -->
+            <div class="features">
+                <h3 class="features-title">Was ist enthalten</h3>
+                <div class="features-grid">
+                    <div class="feature">
+                        <span class="feature-icon">✓</span>
+                        <span>Vorinstallierter KI/ML Software Stack</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">✓</span>
+                        <span>3-5 Jahre Garantieoptionen</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">✓</span>
+                        <span>Custom Wasserkühlung</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">✓</span>
+                        <span>Kostenloser Versand in Deutschland</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">✓</span>
+                        <span>Prioritätsbau (3-5 Tage)</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">✓</span>
+                        <span>24/7 Technischer Support</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CTA -->
+            <div class="cta">
+                <div class="cta-content">
+                    <h2 class="cta-title">Bereit, Ihre KI zu beschleunigen?</h2>
+                    <p class="cta-subtitle">Erhalten Sie Expertenkonfigurationsberatung und exklusive Preise</p>
+                    
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-label">Website</div>
+                            <div class="contact-value">mifcom.de/startplatz</div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-label">E-Mail</div>
+                            <div class="contact-value">ai@mifcom.de</div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-label">Telefon</div>
+                            <div class="contact-value">+49 6151 6291630</div>
+                        </div>
+                    </div>
+                    
+                    <div class="promo-banner">100€ STARTGUTHABEN</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <span>Gültig bis 31. Dezember 2025</span>
+            <span>© 2025 MIFCOM GmbH × STARTPLATZ</span>
+        </div>
+    </div>
+</body>
+</html> 

@@ -1,0 +1,104 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Enterprise Workstation - Ultra Tower -->
+  <defs>
+    <linearGradient id="enterpriseGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A4A4A;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#2A2A2A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1A1A1A;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="enterpriseGlass" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#A3D55F;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#813DFF;stop-opacity:0.1" />
+    </linearGradient>
+    <filter id="enterpriseGlow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="rgbGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF0000;stop-opacity:0.8" />
+      <stop offset="33%" style="stop-color:#00FF00;stop-opacity:0.8" />
+      <stop offset="66%" style="stop-color:#0080FF;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#A3D55F;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Main case body - ultra tower -->
+  <rect x="80" y="20" width="240" height="260" rx="6" fill="url(#enterpriseGradient)" stroke="#0A0A0A" stroke-width="3"/>
+  
+  <!-- Premium brushed aluminum front -->
+  <rect x="88" y="28" width="224" height="244" rx="4" fill="#1A1A1A"/>
+  <pattern id="brushed" x="0" y="0" width="100" height="1" patternUnits="userSpaceOnUse">
+    <line x1="0" y1="0.5" x2="100" y2="0.5" stroke="#2A2A2A" stroke-width="0.5" opacity="0.3"/>
+  </pattern>
+  <rect x="88" y="28" width="224" height="244" rx="4" fill="url(#brushed)" opacity="0.5"/>
+  
+  <!-- Full tempered glass panel -->
+  <rect x="95" y="35" width="210" height="230" rx="3" fill="url(#enterpriseGlass)" stroke="#A3D55F" stroke-width="1.5" opacity="0.9"/>
+  
+  <!-- RGB lighting system - multiple zones -->
+  <rect x="100" y="40" width="3" height="220" fill="url(#rgbGradient)" filter="url(#enterpriseGlow)">
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="297" y="40" width="3" height="220" fill="url(#rgbGradient)" filter="url(#enterpriseGlow)">
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="100" y="40" width="200" height="3" fill="url(#rgbGradient)" filter="url(#enterpriseGlow)">
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="1s" repeatCount="indefinite"/>
+  </rect>
+  
+  <!-- Premium IO panel with display -->
+  <rect x="120" y="50" width="160" height="45" rx="4" fill="#0A0A0A"/>
+  <rect x="125" y="55" width="60" height="35" rx="2" fill="#1A1A1A"/> <!-- LCD display -->
+  <text x="155" y="70" text-anchor="middle" fill="#A3D55F" font-family="monospace" font-size="8">CPU: 45°C</text>
+  <text x="155" y="80" text-anchor="middle" fill="#A3D55F" font-family="monospace" font-size="8">GPU: 52°C</text>
+  
+  <!-- Multiple USB ports -->
+  <rect x="190" y="60" width="20" height="8" rx="1" fill="#0080BB"/>
+  <rect x="215" y="60" width="20" height="8" rx="1" fill="#0080BB"/>
+  <rect x="190" y="72" width="20" height="8" rx="1" fill="#A3D55F"/> <!-- USB-C -->
+  <rect x="215" y="72" width="20" height="8" rx="1" fill="#A3D55F"/> <!-- USB-C -->
+  
+  <!-- Premium power button -->
+  <circle cx="255" cy="72" r="12" fill="none" stroke="#A3D55F" stroke-width="2" opacity="0.5">
+    <animate attributeName="r" values="12;14;12" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="255" cy="72" r="9" fill="#1A1A1A" stroke="#A3D55F" stroke-width="2"/>
+  <circle cx="255" cy="72" r="5" fill="#A3D55F">
+    <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Triple radiator fans -->
+  <g opacity="0.4">
+    <circle cx="130" cy="120" r="30" fill="none" stroke="#333" stroke-width="2"/>
+    <circle cx="200" cy="120" r="30" fill="none" stroke="#333" stroke-width="2"/>
+    <circle cx="270" cy="120" r="30" fill="none" stroke="#333" stroke-width="2"/>
+  </g>
+  
+  <!-- Dual RTX 4090 visible -->
+  <rect x="120" y="170" width="160" height="30" rx="3" fill="#5A5A5A"/>
+  <rect x="125" y="175" width="20" height="20" rx="2" fill="#A3D55F"/>
+  <text x="200" y="188" text-anchor="middle" fill="#A3D55F" font-family="Arial, sans-serif" font-size="12" font-weight="bold">2× RTX 4090</text>
+  
+  <!-- Second GPU -->
+  <rect x="120" y="205" width="160" height="30" rx="3" fill="#5A5A5A"/>
+  <rect x="125" y="210" width="20" height="20" rx="2" fill="#813DFF" opacity="0.8"/>
+  <text x="200" y="223" text-anchor="middle" fill="#813DFF" font-family="Arial, sans-serif" font-size="10">NVLink Connected</text>
+  
+  <!-- Custom water cooling tubes -->
+  <path d="M 110 150 Q 110 160 120 160 L 280 160 Q 290 160 290 150" fill="none" stroke="#0080BB" stroke-width="3" opacity="0.5"/>
+  <path d="M 110 240 Q 110 250 120 250 L 280 250 Q 290 250 290 240" fill="none" stroke="#0080BB" stroke-width="3" opacity="0.5"/>
+  
+  <!-- Premium base with cable management -->
+  <rect x="100" y="280" width="60" height="12" rx="3" fill="#2A2A2A"/>
+  <rect x="240" y="280" width="60" height="12" rx="3" fill="#2A2A2A"/>
+  
+  <!-- MIFCOM Enterprise badge -->
+  <rect x="285" y="50" width="25" height="25" rx="4" fill="#A3D55F"/>
+  <text x="297.5" y="65" text-anchor="middle" fill="#1A1A1A" font-family="Arial, sans-serif" font-size="12" font-weight="bold">M</text>
+  
+  <!-- Enterprise label -->
+  <text x="200" y="15" text-anchor="middle" fill="#813DFF" font-family="Arial, sans-serif" font-size="14" font-weight="bold">ENTERPRISE</text>
+</svg> 
