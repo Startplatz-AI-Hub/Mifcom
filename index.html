@@ -28,74 +28,72 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="hero__background">
-            <img src="src/assets/images/keyvisual.png" alt="Background" class="hero__bg-image">
+    <section class="hero">
+        <!-- Keyvisual Background -->
+        <div class="hero__keyvisual-bg">
+            <img src="src/assets/images/keyvisual.png" alt="AI Workstation Keyvisual" class="keyvisual-image">
+        </div>
+        
+        <!-- Particles -->
+        <div class="particles-container">
+            <div class="particle particle--1"></div>
+            <div class="particle particle--2"></div>
+            <div class="particle particle--3"></div>
+            <div class="particle particle--4"></div>
+            <div class="particle particle--5"></div>
+            <div class="particle particle--6"></div>
+            <div class="particle particle--7"></div>
+            <div class="particle particle--8"></div>
+            <div class="particle particle--9"></div>
+            <div class="particle particle--10"></div>
         </div>
         
         <div class="container">
+            <!-- Top Logos -->
+            <div class="hero__top">
+                <div class="hero__logos">
+                    <img src="src/assets/icons/aihublogo.png" alt="STARTPLATZ AI Hub Logo" class="logo">
+                    <span class="hero__logos-separator">×</span>
+                    <img src="src/assets/images/mifcom_logo.png" alt="MIFCOM Logo" class="logo">
+                </div>
+                <div class="hero__top-badges">
+                    <div class="top-badge">
+                        <img src="src/assets/images/nvida_rtx_logo.jpg" alt="NVIDIA GeForce RTX Logo" class="badge__logo">
+                    </div>
+                    <div class="top-badge">
+                        <img src="src/assets/images/made_in_germany_icon.png" alt="Made in Germany" class="badge__logo badge__logo--mig">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hero Content -->
             <div class="hero__content">
                 <div class="hero__left">
-                    <div class="hero__logos">
-                        <img src="src/assets/icons/aihublogo.png" alt="STARTPLATZ AI Hub" class="logo logo--startplatz">
-                        <span class="hero__logos-separator">×</span>
-                        <img src="src/assets/icons/Logo_Rechteck_white.png" alt="MIFCOM" class="logo logo--mifcom">
-                    </div>
-                    
                     <h1 class="hero__headline">
                         Entfessle<br>
-                        KI-Power für<br>
+                        <span class="gradient-text">KI-Power</span> für<br>
                         dein Team.
                     </h1>
                     
                     <p class="hero__subline">
-                        <span class="discount-highlight">-10% Community-Preis</span> auf<br>
-                        maßgeschneiderte RTX®-<br>
-                        Workstations.
+                        Hol dir Startguthaben auf maßgeschneiderte RTX®-Workstations.
                     </p>
                     
-                    <a href="#consult" class="btn btn--primary btn--hero" data-track="hero-cta-primary">
-                        <span>-10% RABATT</span>
-                    </a>
-                    
-                    <div class="hero__stats">
-                        <div class="stat-item">
-                            <div class="stat-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M12 2L14.09 8.26L20.18 8.27L15.54 11.98L17.64 18.24L12 14.53L6.36 18.24L8.46 11.98L3.82 8.27L9.91 8.26L12 2Z" fill="#A3D55F"/>
-                                </svg>
-                            </div>
-                            <div class="stat-content">
-                                <span class="stat-value">3 Jahre</span>
-                                <span class="stat-label">Garantie</span>
-                            </div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-icon">♾️</div>
-                            <div class="stat-content">
-                                <span class="stat-value">Lifetime</span>
-                                <span class="stat-label">Support</span>
-                            </div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-icon">📅</div>
-                            <div class="stat-content">
-                                <span class="stat-value">30 Tage</span>
-                                <span class="stat-label">Testen</span>
-                            </div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-icon">%</div>
-                            <div class="stat-content">
-                                <span class="stat-value">0%</span>
-                                <span class="stat-label">Finanzierung</span>
-                            </div>
-                        </div>
+                    <div class="hero__cta">
+                        <a href="#contact" class="btn btn--primary btn--large btn--glow">100€ GESCHENKT</a>
                     </div>
                 </div>
                 
                 <div class="hero__right">
-                    <img src="src/assets/images/hero_pc.png" alt="RTX Workstation" class="hero__pc-image">
+                    <div class="hero__pc-container">
+                        <div class="pc-glow"></div>
+                        <img src="src/assets/images/hero_pc.png" alt="MIFCOM AI Workstation" class="hero__pc-image">
+                    </div>
+                    
+                    <!-- Perks Overlay - Moved Lower -->
+                    <div class="perks-overlay">
+                        <img src="src/assets/images/perks.png" alt="MIFCOM Perks" class="perks-overlay-image">
+                    </div>
                 </div>
             </div>
         </div>
@@ -137,124 +135,12 @@
         </div>
     </section>
 
-    <!-- Why On-Prem AI Section -->
-    <section class="why-onprem" id="why-onprem">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Warum On-Premise KI?</h2>
-                <p class="section-subtitle">Schluss mit explodierenden Cloud-Kosten. Übernimm die Kontrolle über deine KI-Infrastruktur.</p>
-            </div>
-            
-            <div class="pain-benefit-grid">
-                <!-- Pain Points -->
-                <div class="pain-points">
-                    <h3 class="subsection-title">Häufige Herausforderungen</h3>
-                    <div class="pain-item">
-                        <div class="pain-icon">💸</div>
-                        <div class="pain-content">
-                            <h4>Cloud GPU-Kosten außer Kontrolle?</h4>
-                            <p>Unvorhersehbare Rechnungen und explodierende Kosten belasten dein Budget</p>
-                        </div>
-                    </div>
-                    <div class="pain-item">
-                        <div class="pain-icon">🔒</div>
-                        <div class="pain-content">
-                            <h4>Sensible Daten in Anbieter-Silos gefangen?</h4>
-                            <p>Datenschutzbedenken und Compliance-Probleme mit Cloud-Anbietern</p>
-                        </div>
-                    </div>
-                    <div class="pain-item">
-                        <div class="pain-icon">⏳</div>
-                        <div class="pain-content">
-                            <h4>Stundenlange Wartezeiten beim Training?</h4>
-                            <p>Warteschlangen und Ressourcenlimits bremsen Innovation aus</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Benefits -->
-                <div class="benefit-cards">
-                    <h3 class="subsection-title">Die MIFCOM Lösung</h3>
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                                <circle cx="24" cy="24" r="20" stroke="#A3D55F" stroke-width="2"/>
-                                <path d="M16 24l6 6 12-12" stroke="#A3D55F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <h4>Bis zu 70% TCO-Einsparung über 24 Monate</h4>
-                        <p>Vorhersehbare Kosten, keine Überraschungen. Amortisation in 6-8 Monaten vs Cloud.</p>
-                    </div>
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                                <rect x="12" y="12" width="24" height="24" rx="2" stroke="#A3D55F" stroke-width="2"/>
-                                <path d="M20 20h8v8h-8z" fill="#A3D55F"/>
-                                <circle cx="24" cy="24" r="20" stroke="#A3D55F" stroke-width="2" opacity="0.3"/>
-                            </svg>
-                        </div>
-                        <h4>IP on-premise & DSGVO-konform</h4>
-                        <p>Deine Daten, deine Kontrolle. Volle Compliance mit Datenschutzgesetzen.</p>
-                    </div>
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                                <path d="M24 4l4 8 8 4-8 4-4 8-4-8-8-4 8-4z" stroke="#A3D55F" stroke-width="2" fill="none"/>
-                                <circle cx="24" cy="24" r="3" fill="#A3D55F"/>
-                            </svg>
-                        </div>
-                        <h4>10× schnellere Iteration mit RTX Tensor Cores</h4>
-                        <p>Keine Warteschlangen, keine Limits. Trainiere Modelle in Gedankenschnelle.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Consultation CTA Section -->
-    <section class="consultation-cta" id="consultation-focus">
-        <div class="container">
-            <div class="consultation-content">
-                <div class="consultation-icon">
-                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-                        <circle cx="40" cy="40" r="38" stroke="#A3D55F" stroke-width="4"/>
-                        <path d="M30 40c0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10-10-4.5-10-10z" fill="#A3D55F"/>
-                        <path d="M20 35c0-11 9-20 20-20s20 9 20 20" stroke="#A3D55F" stroke-width="3" stroke-linecap="round"/>
-                        <path d="M25 45l6 6m24 0l-6-6" stroke="#A3D55F" stroke-width="3" stroke-linecap="round"/>
-                    </svg>
-                </div>
-                <h2 class="consultation-title">Deine perfekte KI-Workstation wartet auf dich</h2>
-                <p class="consultation-subtitle">
-                    Jedes Projekt ist einzigartig. Unsere KI-Experten analysieren deine spezifischen Anforderungen 
-                    und konfigurieren die optimale Workstation für deine Workloads.
-                </p>
-                <div class="consultation-benefits">
-                    <div class="consultation-benefit">
-                        <span class="benefit-icon">✓</span>
-                        <span>Persönliche Bedarfsanalyse</span>
-                    </div>
-                    <div class="consultation-benefit">
-                        <span class="benefit-icon">✓</span>
-                        <span>Maßgeschneiderte Konfiguration</span>
-                    </div>
-                    <div class="consultation-benefit">
-                        <span class="benefit-icon">✓</span>
-                        <span>10% STARTPLATZ Rabatt</span>
-                    </div>
-                </div>
-                <a href="#consult" class="btn btn--primary btn--large btn--glow">
-                    Jetzt kostenlos beraten lassen →
-                </a>
-            </div>
-        </div>
-    </section>
-
     <!-- Workstation Configurations -->
     <section class="workstations" id="workstations">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Beispiel-Konfigurationen</h2>
-                <p class="section-subtitle">Diese Systeme dienen als Orientierung. Dein persönliches System konfigurieren wir gemeinsam nach deinen Anforderungen.</p>
+                <h2 class="section-title">RTX 50 Serie Workstations</h2>
+                <p class="section-subtitle">Maßgeschneiderte Systeme für maximale KI-Performance</p>
             </div>
             
             <div class="config-cards">
@@ -281,38 +167,27 @@
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Speicher</span>
-                            <span class="spec-value">2TB NVMe Gen5</span>
+                            <span class="spec-value">2TB NVMe Gen5 SSD</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Kühlung</span>
-                            <span class="spec-value">360mm AIO Wasserkühlung</span>
-                        </div>
-                    </div>
-                    
-                    <div class="config-card__features">
-                        <div class="feature-check">✓ Vorinstallierter KI-Stack</div>
-                        <div class="feature-check">✓ Remote Management</div>
-                        <div class="feature-check">✓ 3 Jahre Garantie</div>
                     </div>
                     
                     <div class="config-card__pricing">
-                        <div class="price-original">€3.999</div>
-                        <div class="price-current">€3.599</div>
-                        <div class="price-savings">Spare €400 mit STARTPLATZ</div>
+                        <span class="price-label">Ab</span>
+                        <div class="price-current">€3.999</div>
+                        <div class="price-savings">+ 100€ STARTPLATZ Bonus</div>
                     </div>
                     
                     <a href="#consult" class="btn btn--primary btn--full">
-                        Beratung vereinbaren
+                        Jetzt konfigurieren
                     </a>
                 </div>
-
+                
                 <!-- AI Professional Configuration -->
                 <div class="config-card config-card--featured">
-                    <div class="config-card__badge">EMPFOHLEN</div>
-                    
+                    <span class="config-card__badge">Beliebteste Wahl</span>
                     <div class="config-card__header">
                         <h3 class="config-card__name">KI Professional</h3>
-                        <p class="config-card__tagline">Für ernsthafte KI-Entwicklung</p>
+                        <p class="config-card__tagline">Für professionelle Workloads</p>
                     </div>
                     
                     <div class="config-card__gpu">
@@ -331,31 +206,21 @@
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Speicher</span>
-                            <span class="spec-value">4TB NVMe Gen5</span>
+                            <span class="spec-value">4TB NVMe Gen5 SSD</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Kühlung</span>
-                            <span class="spec-value">Custom Loop Wasserkühlung</span>
-                        </div>
-                    </div>
-                    
-                    <div class="config-card__features">
-                        <div class="feature-check">✓ KI/ML Software Suite</div>
-                        <div class="feature-check">✓ Priority Support</div>
-                        <div class="feature-check">✓ Vor-Ort-Service</div>
                     </div>
                     
                     <div class="config-card__pricing">
-                        <div class="price-original">€5.999</div>
-                        <div class="price-current">€5.399</div>
-                        <div class="price-savings">Spare €600 mit STARTPLATZ</div>
+                        <span class="price-label">Ab</span>
+                        <div class="price-current">€5.999</div>
+                        <div class="price-savings">+ 100€ STARTPLATZ Bonus</div>
                     </div>
                     
-                    <a href="#consult" class="btn btn--primary btn--full btn--glow">
-                        Beratung vereinbaren
+                    <a href="#consult" class="btn btn--primary btn--full">
+                        Jetzt konfigurieren
                     </a>
                 </div>
-
+                
                 <!-- AI Enterprise Configuration -->
                 <div class="config-card">
                     <div class="config-card__header">
@@ -371,7 +236,7 @@
                     <div class="config-card__specs">
                         <div class="spec-item">
                             <span class="spec-label">CPU</span>
-                            <span class="spec-value">AMD Ryzen 9 9950X</span>
+                            <span class="spec-value">AMD Ryzen 9 9950X3D</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Arbeitsspeicher</span>
@@ -379,364 +244,123 @@
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Speicher</span>
-                            <span class="spec-value">8TB NVMe RAID</span>
+                            <span class="spec-value">8TB NVMe RAID Array</span>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Kühlung</span>
-                            <span class="spec-value">Dual 360mm Custom</span>
-                        </div>
-                    </div>
-                    
-                    <div class="config-card__features">
-                        <div class="feature-check">✓ Enterprise Support</div>
-                        <div class="feature-check">✓ 5 Jahre Garantie</div>
-                        <div class="feature-check">✓ Dedizierter Techniker</div>
                     </div>
                     
                     <div class="config-card__pricing">
-                        <div class="price-original">€9.999</div>
-                        <div class="price-current">€8.999</div>
-                        <div class="price-savings">Spare €1.000 mit STARTPLATZ</div>
+                        <span class="price-label">Ab</span>
+                        <div class="price-current">€9.999</div>
+                        <div class="price-savings">+ 100€ STARTPLATZ Bonus</div>
                     </div>
                     
                     <a href="#consult" class="btn btn--primary btn--full">
-                        Beratung vereinbaren
+                        Jetzt konfigurieren
                     </a>
                 </div>
             </div>
-
-            <!-- Multi-GPU Beast Configuration -->
-            <div class="ultimate-config">
-                <div class="ultimate-badge">ULTIMATE KONFIGURATION</div>
-                <div class="ultimate-content">
-                    <div class="ultimate-header">
-                        <h3>KI Forschungsstation</h3>
-                        <p>Dual RTX 5090 • 64GB GDDR7 Total • 43.520 CUDA Cores</p>
-                    </div>
-                    <div class="ultimate-specs">
-                        <span>AMD Threadripper PRO 7995WX</span>
-                        <span>•</span>
-                        <span>256GB DDR5 ECC</span>
-                        <span>•</span>
-                        <span>Custom Liquid Cooling</span>
-                    </div>
-                    <div class="ultimate-cta">
-                        <div class="ultimate-price">
-                            <span class="from">Ab</span>
-                            <span class="price">€17.999</span>
-                        </div>
-                        <a href="#consult" class="btn btn--primary">Individuelles Angebot anfordern</a>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
-    <!-- Technology Features -->
-    <section class="tech-features" id="features">
+    <!-- FAQ Section - Directly before contact form -->
+    <section class="faq-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Entwickelt für KI-Exzellenz</h2>
-                <p class="section-subtitle">Jede Komponente optimiert für Machine Learning Workloads</p>
-            </div>
+            <h2 class="section-title">Häufig gestellte Fragen zu KI-Workstations</h2>
             
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <img src="data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='8' y='12' width='32' height='24' rx='2' stroke='%23A3D55F' stroke-width='2'/%3E%3Cpath d='M16 12V8a4 4 0 018 0v4M28 12V8a4 4 0 018 0v4' stroke='%23A3D55F' stroke-width='2'/%3E%3Cpath d='M14 20h20M14 24h20M14 28h14' stroke='%23A3D55F' stroke-width='2' opacity='0.5'/%3E%3C/svg%3E" alt="GPU Icon">
-                    </div>
-                    <h3 class="feature-title">Blackwell Architektur</h3>
-                    <p class="feature-text">5. Generation Tensor Cores liefern bis zu 5× schnelleres KI-Training. Optimiert für Transformer-Modelle und große Sprachmodelle.</p>
+            <!-- Use Cases -->
+            <div class="faq-item">
+                <div class="faq-header">
+                    <h3>Wofür eignet sich eine KI-Workstation?</h3>
+                    <span class="faq-toggle">+</span>
                 </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <img src="data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='12' y='12' width='24' height='24' rx='2' stroke='%23A3D55F' stroke-width='2'/%3E%3Cpath d='M20 20h8v8h-8z' stroke='%23A3D55F' stroke-width='2'/%3E%3Cpath d='M24 8v4m0 24v4m12-16h4m-32 0H4' stroke='%23A3D55F' stroke-width='2' opacity='0.5'/%3E%3C/svg%3E" alt="CPU Icon">
-                    </div>
-                    <h3 class="feature-title">Neueste CPUs</h3>
-                    <p class="feature-text">Intel Core Ultra 9 mit bis zu 24 Kernen oder AMD Ryzen 9 9950X mit 16 Kernen. Optimiert für parallele Datenvorverarbeitung.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <img src="data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M24 4l4 8 8 4-8 4-4 8-4-8-8-4 8-4z' stroke='%23A3D55F' stroke-width='2' fill='none'/%3E%3Cpath d='M24 16v16m-8-8h16' stroke='%23A3D55F' stroke-width='2' opacity='0.5'/%3E%3C/svg%3E" alt="Memory Icon">
-                    </div>
-                    <h3 class="feature-title">DDR5 Speicher</h3>
-                    <p class="feature-text">Bis zu 256GB DDR5-6400 Speicher mit ECC-Unterstützung. Verarbeiten Sie massive Datensätze ohne Engpässe.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <img src="data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='24' cy='24' r='16' stroke='%23A3D55F' stroke-width='2'/%3E%3Cpath d='M24 16v8l4 4' stroke='%23A3D55F' stroke-width='2'/%3E%3Cpath d='M16 8l-2-2m18-2l2 2m-18 34l-2 2m18 2l2-2' stroke='%23A3D55F' stroke-width='2' opacity='0.5'/%3E%3C/svg%3E" alt="Storage Icon">
-                    </div>
-                    <h3 class="feature-title">NVMe Gen5 Speicher</h3>
-                    <p class="feature-text">Blitzschnelle PCIe 5.0 SSDs mit bis zu 12GB/s Lesegeschwindigkeit. Laden Sie massive Modelle und Datensätze sofort.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <img src="data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M24 8c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16S32.837 8 24 8z' stroke='%23A3D55F' stroke-width='2'/%3E%3Cpath d='M24 16v16m-8-8h16' stroke='%23A3D55F' stroke-width='2'/%3E%3Cpath d='M20 4h8m-12 8l4 4m16-4l-4 4' stroke='%23A3D55F' stroke-width='2' opacity='0.5'/%3E%3C/svg%3E" alt="Cooling Icon">
-                    </div>
-                    <h3 class="feature-title">Fortschrittliche Kühlung</h3>
-                    <p class="feature-text">Custom Wasserkühlung hält optimale Temperaturen auch bei 100% GPU-Last. Flüsterleiser Betrieb.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <img src="data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 14V10a4 4 0 018 0v4m-12 0h16a2 2 0 012 2v16a2 2 0 01-2 2H16a2 2 0 01-2-2V16a2 2 0 012-2z' stroke='%23A3D55F' stroke-width='2'/%3E%3Cpath d='M24 22v8' stroke='%23A3D55F' stroke-width='2'/%3E%3C/svg%3E" alt="Support Icon">
-                    </div>
-                    <h3 class="feature-title">Enterprise Support</h3>
-                    <p class="feature-text">3-5 Jahre Garantieoptionen mit Next-Business-Day Vor-Ort-Service. 24/7 technischer Support von KI-Spezialisten.</p>
+                <div class="faq-content">
+                    <ul class="use-case-list">
+                        <li><strong>Lokales KI-Training:</strong> Entwickeln und trainieren Sie eigene KI-Modelle mit voller Kontrolle über Ihre Daten</li>
+                        <li><strong>Generative KI:</strong> Erstellen Sie Bilder, Videos und 3D-Modelle mit Stable Diffusion und anderen KI-Tools</li>
+                        <li><strong>Sprachmodelle:</strong> Nutzen Sie LLMs wie LLaMA lokal für maximale Datensicherheit</li>
+                        <li><strong>KI-Entwicklung:</strong> Optimale Umgebung für PyTorch, TensorFlow und andere KI-Frameworks</li>
+                    </ul>
                 </div>
             </div>
+
+            <!-- Business Benefits -->
+            <div class="faq-item">
+                <div class="faq-header">
+                    <h3>Vorteile für Ihr Unternehmen</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-content">
+                    <ul class="benefits-list">
+                        <li><strong>Datenschutz & Sicherheit:</strong> Volle Kontrolle über sensible Unternehmensdaten durch lokales Training</li>
+                        <li><strong>Kosteneffizienz:</strong> Keine Cloud-Gebühren, einmalige Investition statt laufender Kosten</li>
+                        <li><strong>Flexibilität:</strong> Anpassbar an Ihre spezifischen KI-Anforderungen</li>
+                        <li><strong>Zukunftssicherheit:</strong> Erweiterbar für wachsende KI-Projekte</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- About the Promotion -->
+            <div class="faq-item">
+                <div class="faq-header">
+                    <h3>Details zur Aktion</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-content">
+                    <div class="promotion-details">
+                        <p class="highlight-text">100€ Startguthaben auf Ihre maßgeschneiderte KI-Workstation</p>
+                        <ul class="promotion-list">
+                            <li>Persönliche Beratung zur optimalen Konfiguration</li>
+                            <li>Einlösbar bei Ihrer individuellen Beratung</li>
+                            <li>Gültig für alle RTX-Workstation Modelle</li>
+                            <li>Inklusive Setup-Unterstützung</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Consultation -->
+            <div class="faq-item">
+                <div class="faq-header">
+                    <h3>Persönliche Beratung</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-content">
+                    <div class="consultation-info">
+                        <p>Unsere KI-Experten beraten Sie gerne zu:</p>
+                        <ul class="consultation-list">
+                            <li>Optimale Workstation-Konfiguration für Ihre Anforderungen</li>
+                            <li>Einsatzmöglichkeiten in Ihrem Unternehmen</li>
+                            <li>Integration in bestehende Workflows</li>
+                            <li>Skalierungsmöglichkeiten für zukünftige Projekte</li>
+                        </ul>
+                        <div class="consultation-cta">
+                            <p>Vereinbaren Sie jetzt Ihr persönliches Beratungsgespräch und sichern Sie sich Ihr Startguthaben!</p>
+                            <a href="#contact" class="btn btn--primary btn--glow">Beratungstermin vereinbaren</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <!-- Use Cases -->
-    <section class="use-cases" id="use-cases">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Gebaut für jede KI-Herausforderung</h2>
-                <p class="section-subtitle">Von der Forschung bis zur Produktion - wir haben Sie abgedeckt</p>
-            </div>
-            
-            <div class="use-cases-grid">
-                <div class="use-case">
-                    <div class="use-case__icon">🤖</div>
-                    <h3 class="use-case__title">Große Sprachmodelle</h3>
-                    <p class="use-case__text">Trainieren und finetunen Sie LLMs mit bis zu 32GB VRAM pro GPU. Perfekt für GPT-ähnliche Modelle und RAG-Anwendungen.</p>
-                </div>
-                
-                <div class="use-case">
-                    <div class="use-case__icon">👁️</div>
-                    <h3 class="use-case__title">Computer Vision</h3>
-                    <p class="use-case__text">Verarbeiten Sie hochauflösende Bilder und Videos in Echtzeit. Ideal für Objekterkennung, Segmentierung und Videoanalyse.</p>
-                </div>
-                
-                <div class="use-case">
-                    <div class="use-case__icon">🧬</div>
-                    <h3 class="use-case__title">Wissenschaftliches Rechnen</h3>
-                    <p class="use-case__text">Beschleunigen Sie Simulationen, Molekulardynamik und Bioinformatik-Workloads mit massiver paralleler Rechenleistung.</p>
-                </div>
-                
-                <div class="use-case">
-                    <div class="use-case__icon">📊</div>
-                    <h3 class="use-case__title">Data Science</h3>
-                    <p class="use-case__text">Beschleunigen Sie Datenvorverarbeitung, Feature Engineering und Modelltraining für tabellarische und Zeitreihendaten.</p>
-                </div>
-                
-                <div class="use-case">
-                    <div class="use-case__icon">🎮</div>
-                    <h3 class="use-case__title">KI Gaming & Simulation</h3>
-                    <p class="use-case__text">Entwickeln Sie KI-Agenten, prozedurale Inhaltsgenerierung und Physiksimulationen für Next-Gen-Erlebnisse.</p>
-                </div>
-                
-                <div class="use-case">
-                    <div class="use-case__icon">🏭</div>
-                    <h3 class="use-case__title">Edge KI-Entwicklung</h3>
-                    <p class="use-case__text">Prototypen und optimieren Sie Modelle für die Bereitstellung auf Edge-Geräten und eingebetteten Systemen.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Success Stories -->
-    <section class="testimonials" id="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Vertraut von KI-Führern</h2>
-                <p class="section-subtitle">Sehen Sie, wie Unternehmen ihre KI-Entwicklung mit MIFCOM Workstations beschleunigen</p>
-            </div>
-            
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-quote">
-                        "Die RTX 5090 Workstation reduzierte unsere LLM-Trainingszeit von Wochen auf Tage. Die 32GB VRAM sind ein Game-Changer für unsere Forschung."
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">Dr. S</div>
-                        <div class="author-info">
-                            <div class="author-name">Dr. Sarah Mitchell</div>
-                            <div class="author-title">Leiterin KI-Forschung, NeuralTech GmbH</div>
-                        </div>
-                    </div>
-                    <div class="testimonial-stat">
-                        <div class="stat-value">85%</div>
-                        <div class="stat-label">Schnelleres Training</div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-quote">
-                        "Wir haben im ersten Jahr über 50.000€ an Cloud-Kosten gespart. Unsere Daten on-premise zu haben, löste auch unsere Compliance-Bedenken."
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">M. K</div>
-                        <div class="author-info">
-                            <div class="author-name">Marcus König</div>
-                            <div class="author-title">CTO, FinAI Solutions</div>
-                        </div>
-                    </div>
-                    <div class="testimonial-stat">
-                        <div class="stat-value">€50k+</div>
-                        <div class="stat-label">Jährliche Einsparung</div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-quote">
-                        "Das Support-Team half uns, unser Setup für Computer Vision Workloads zu optimieren. Die Performance übertraf unsere Erwartungen."
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">L. W</div>
-                        <div class="author-info">
-                            <div class="author-name">Lisa Wagner</div>
-                            <div class="author-title">ML Engineer, AutoVision AG</div>
-                        </div>
-                    </div>
-                    <div class="testimonial-stat">
-                        <div class="stat-value">10×</div>
-                        <div class="stat-label">Schnellere Inferenz</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="faq" id="faq">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Häufig gestellte Fragen</h2>
-                <p class="section-subtitle">Alles, was Sie über KI-Workstations wissen müssen</p>
-            </div>
-            
-            <div class="faq-grid">
-                <div class="faq-column">
-                    <details class="faq-item">
-                        <summary class="faq-question">Was ist neu in der RTX 50 Serie?</summary>
-                        <div class="faq-answer">
-                            <p>Die RTX 50 Serie verfügt über NVIDIAs neue Blackwell-Architektur mit Tensor Cores der 5. Generation, die bis zu 5× schnellere KI-Performance liefern. Wichtige Verbesserungen sind GDDR7-Speicher mit bis zu 1,8TB/s Bandbreite, verbesserte FP8-Unterstützung und deutlich größerer L2-Cache für bessere LLM-Performance.</p>
-                        </div>
-                    </details>
-                    
-                    <details class="faq-item">
-                        <summary class="faq-question">RTX 5080 vs RTX 5090 für KI?</summary>
-                        <div class="faq-answer">
-                            <p>Die RTX 5090 mit 32GB VRAM ist ideal für große Sprachmodelle und komplexe Simulationen. Die RTX 5080 mit 16GB ist perfekt für die meisten Deep Learning Aufgaben, Computer Vision und mittelgroße Modelle. Wählen Sie basierend auf Ihrer Modellgröße und Budget.</p>
-                        </div>
-                    </details>
-                    
-                    <details class="faq-item">
-                        <summary class="faq-question">Wie viel kann ich vs Cloud sparen?</summary>
-                        <div class="faq-answer">
-                            <p>Bei 40 Stunden/Woche Nutzung amortisiert sich eine RTX 5090 Workstation in 6-8 Monaten im Vergleich zu äquivalenten Cloud GPU-Instanzen. Über 2 Jahre können Sie 70-80% sparen plus die Vorteile der Datensouveränität.</p>
-                        </div>
-                    </details>
-                    
-                    <details class="faq-item">
-                        <summary class="faq-question">Welche Software ist vorinstalliert?</summary>
-                        <div class="faq-answer">
-                            <p>Alle Systeme kommen mit Ubuntu 22.04 oder Windows 11 Pro, CUDA Toolkit, cuDNN, PyTorch, TensorFlow, Docker und beliebten ML-Bibliotheken vorkonfiguriert. Wir bieten auch individuelle Software-Stack-Installation.</p>
-                        </div>
-                    </details>
-                </div>
-                
-                <div class="faq-column">
-                    <details class="faq-item">
-                        <summary class="faq-question">Kann ich später weitere GPUs hinzufügen?</summary>
-                        <div class="faq-answer">
-                            <p>Ja! Unsere Professional und Enterprise Konfigurationen unterstützen bis zu 4 GPUs mit NVLink-Bridges für maximale Bandbreite. Netzteile und Kühlung sind entsprechend für zukünftige Erweiterungen dimensioniert.</p>
-                        </div>
-                    </details>
-                    
-                    <details class="faq-item">
-                        <summary class="faq-question">Was ist mit dem Stromverbrauch?</summary>
-                        <div class="faq-answer">
-                            <p>RTX 5070: ~250W, RTX 5080: ~320W, RTX 5090: ~450W unter Volllast. Alle Systeme beinhalten 80+ Platinum Netzteile für maximale Effizienz. Wir stellen detaillierte Stromplanungsanleitungen zur Verfügung.</p>
-                        </div>
-                    </details>
-                    
-                    <details class="faq-item">
-                        <summary class="faq-question">Wie leise sind diese Systeme?</summary>
-                        <div class="faq-answer">
-                            <p>Mit Custom Wasserkühlung bleiben die Geräuschpegel unter typischen KI-Workloads unter 35dB - leiser als eine Bibliothek. Selbst unter Volllast bleiben sie unter 45dB.</p>
-                        </div>
-                    </details>
-                    
-                    <details class="faq-item">
-                        <summary class="faq-question">Was ist das STARTPLATZ Angebot?</summary>
-                        <div class="faq-answer">
-                            <p>STARTPLATZ AI Hub Mitglieder erhalten 10% Rabatt auf alle Konfigurationen, kostenlosen Versand in Deutschland, Priority Build Queue (3-5 Tage) und eine kostenlose KI-Optimierungsberatung im Wert von 500€.</p>
-                        </div>
-                    </details>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="final-cta" id="configure">
-        <div class="container">
-            <div class="cta-content">
-                <h2 class="cta-title">Bereit, Ihre KI-Entwicklung zu beschleunigen?</h2>
-                <p class="cta-subtitle">Schließen Sie sich führenden KI-Teams an, die MIFCOM Workstations nutzen, um die Grenzen des Möglichen zu verschieben.</p>
-                
-                <div class="cta-options">
-                    <div class="cta-option cta-option--featured">
-                        <div class="cta-badge">Empfohlen</div>
-                        <h3>Kostenlose Beratung</h3>
-                        <p>Erhalten Sie Expertenrat zur besten Konfiguration für Ihre Bedürfnisse</p>
-                        <a href="#consult" class="btn btn--primary btn--glow">
-                            Beratung buchen →
-                        </a>
-                    </div>
-                    
-                    <div class="cta-option">
-                        <h3>Online konfigurieren</h3>
-                        <p>Erstellen Sie Ihre perfekte KI-Workstation mit unserem Konfigurator</p>
-                        <a href="https://mifcom.de/ai-workstations?utm_source=startplatz" class="btn btn--secondary">
-                            Zum Konfigurator →
-                        </a>
-                    </div>
-                    
-                    <div class="cta-option">
-                        <h3>Ratgeber herunterladen</h3>
-                        <p>Kompletter Käuferleitfaden für KI-Workstations 2025</p>
-                        <a href="#download" class="btn btn--secondary">
-                            Kostenlos herunterladen →
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="discount-banner">
-                    <div class="discount-content">
-                        <span class="discount-label">Exklusives Angebot</span>
-                        <span class="discount-code">STARTPLATZ10</span>
-                        <span class="discount-text">Nutze den Code für 10% Rabatt</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Form -->
-    <section class="contact-form" id="consult">
+    <!-- Contact Form Section -->
+    <section class="contact-form" id="contact">
         <div class="container">
             <div class="form-wrapper">
                 <div class="form-header">
-                    <h2>Sichere dir deine kostenlose KI-Workstation Beratung</h2>
-                    <p>Unsere Experten helfen dir, die perfekte Konfiguration für deine KI/ML-Workloads zu wählen</p>
+                    <h2>Jetzt kostenlose Beratung sichern</h2>
+                    <p>Unsere KI-Experten konfigurieren die perfekte Workstation für deine Anforderungen</p>
                 </div>
                 
-                <form class="consultation-form" id="consultForm">
+                <form class="consultation-form" id="consultation-form">
                     <div class="form-row">
                         <div class="form-field">
-                            <label for="name">Vollständiger Name *</label>
+                            <label for="name">Name *</label>
                             <input type="text" id="name" name="name" required>
                         </div>
                         <div class="form-field">
-                            <label for="email">Geschäftliche E-Mail *</label>
+                            <label for="email">E-Mail *</label>
                             <input type="email" id="email" name="email" required>
                         </div>
                     </div>
@@ -747,46 +371,20 @@
                             <input type="text" id="company" name="company">
                         </div>
                         <div class="form-field">
-                            <label for="phone">Telefonnummer</label>
+                            <label for="phone">Telefon</label>
                             <input type="tel" id="phone" name="phone">
                         </div>
                     </div>
                     
-                    <div class="form-row">
-                        <div class="form-field">
-                            <label for="workload">Primärer KI-Workload *</label>
-                            <select id="workload" name="workload" required>
-                                <option value="">Wähle deinen Hauptanwendungsfall...</option>
-                                <option value="llm">Große Sprachmodelle (LLM)</option>
-                                <option value="vision">Computer Vision</option>
-                                <option value="scientific">Wissenschaftliches Rechnen</option>
-                                <option value="data-science">Data Science & Analytics</option>
-                                <option value="research">KI-Forschung</option>
-                                <option value="production">Produktions-ML</option>
-                                <option value="other">Andere</option>
-                            </select>
-                        </div>
-                        <div class="form-field">
-                            <label for="timeline">Kaufzeitrahmen *</label>
-                            <select id="timeline" name="timeline" required>
-                                <option value="">Wann benötigst du es?</option>
-                                <option value="immediate">Sofort (< 2 Wochen)</option>
-                                <option value="month">Innerhalb eines Monats</option>
-                                <option value="quarter">Innerhalb von 3 Monaten</option>
-                                <option value="planning">Nur Planung</option>
-                            </select>
-                        </div>
-                    </div>
-                    
                     <div class="form-field">
-                        <label for="requirements">Erzähle uns von deinen Anforderungen</label>
-                        <textarea id="requirements" name="requirements" rows="4" placeholder="Modellgrößen, Datensätze, spezielle Software-Anforderungen, Performance-Anforderungen..."></textarea>
+                        <label for="use-case">Beschreibe deinen KI-Anwendungsfall</label>
+                        <textarea id="use-case" name="use-case" rows="4" placeholder="z.B. Machine Learning, Computer Vision, LLM Training..."></textarea>
                     </div>
                     
                     <div class="form-footer">
                         <label class="checkbox-label">
-                            <input type="checkbox" name="consent" required>
-                            <span>Ich stimme zu, Mitteilungen über KI-Workstation-Lösungen zu erhalten</span>
+                            <input type="checkbox" name="privacy" required>
+                            Ich stimme der <a href="#" target="_blank">Datenschutzerklärung</a> zu *
                         </label>
                         
                         <button type="submit" class="btn btn--primary btn--large">
@@ -801,77 +399,80 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-main">
-                    <div class="footer-brand">
-                        <div class="footer-logos">
-                            <img src="src/assets/icons/aihublogo.png" alt="STARTPLATZ AI Hub" class="footer-logo">
-                            <span class="footer-separator">×</span>
-                            <img src="src/assets/icons/Logo_Rechteck_white.png" alt="MIFCOM" class="footer-logo">
-                        </div>
-                        <p class="footer-tagline">KI-Innovation mit modernster Hardware ermöglichen</p>
+            <div class="footer-main">
+                <div class="footer-logos">
+                    <img src="src/assets/images/Startplatz_logo.png" alt="STARTPLATZ" class="footer-logo">
+                    <span class="footer-separator">×</span>
+                    <img src="src/assets/images/mifcom_logo.png" alt="MIFCOM" class="footer-logo">
+                </div>
+                
+                <p class="footer-tagline">
+                    KI-Power für dein Team - Exklusiv für die STARTPLATZ Community
+                </p>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Produkte</h4>
+                        <a href="#workstations">KI Workstations</a>
+                        <a href="#performance">Performance</a>
                     </div>
-                    
-                    <div class="footer-links">
-                        <div class="footer-column">
-                            <h4>Produkte</h4>
-                            <a href="#workstations">KI-Workstations</a>
-                            <a href="#features">Technologie</a>
-                            <a href="#configure">Konfigurator</a>
-                            <a href="#enterprise">Enterprise Lösungen</a>
-                        </div>
-                        
-                        <div class="footer-column">
-                            <h4>Support</h4>
-                            <a href="#faq">FAQ</a>
-                            <a href="#consultation">Beratung</a>
-                            <a href="#warranty">Garantie</a>
-                            <a href="#contact">Kontakt</a>
-                        </div>
-                        
-                        <div class="footer-column">
-                            <h4>Unternehmen</h4>
-                            <a href="#about">Über MIFCOM</a>
-                            <a href="#startplatz">STARTPLATZ AI Hub</a>
-                            <a href="#careers">Karriere</a>
-                            <a href="#news">News</a>
-                        </div>
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <a href="#consult">Beratung</a>
+                        <a href="tel:+496151629163">+49 6151 629163</a>
+                        <a href="mailto:ai@mifcom.de">ai@mifcom.de</a>
                     </div>
-                    
-                    <div class="footer-contact">
-                        <h4>Kontakt</h4>
-                        <p>📧 ai@mifcom.de</p>
-                        <p>📞 +49 (0) 6151 6291630</p>
-                        <p>🏢 Mo-Fr 9:00-18:00 Uhr</p>
-                        
-                        <div class="footer-social">
-                            <a href="https://linkedin.com/company/mifcom" aria-label="LinkedIn">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14m-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 001.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 00-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
-                                </svg>
-                            </a>
-                            <a href="https://twitter.com/mifcom" aria-label="Twitter">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                                </svg>
-                            </a>
-                        </div>
+                    <div class="footer-column footer-contact">
+                        <h4>MIFCOM GmbH</h4>
+                        <p>Rheinstraße 95<br>64295 Darmstadt<br>Deutschland</p>
                     </div>
                 </div>
                 
-                <div class="footer-bottom">
-                    <p>&copy; 2025 MIFCOM GmbH. Alle Rechte vorbehalten.</p>
-                    <div class="footer-legal">
-                        <a href="#privacy">Datenschutz</a>
-                        <a href="#terms">AGB</a>
-                        <a href="#imprint">Impressum</a>
-                    </div>
+                <div class="footer-social">
+                    <a href="https://startplatz.de" target="_blank" aria-label="STARTPLATZ">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </a>
+                    <a href="https://mifcom.de" target="_blank" aria-label="MIFCOM">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                        </svg>
+                    </a>
                 </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <a href="https://mifcom.de/impressum">Impressum</a>
+                    <a href="https://mifcom.de/datenschutz">Datenschutz</a>
+                    <a href="https://mifcom.de/agb">AGB</a>
+                </div>
+                <p>&copy; 2025 MIFCOM GmbH × STARTPLATZ. Alle Rechte vorbehalten.</p>
             </div>
         </div>
     </footer>
 
     <!-- Scripts -->
     <script src="src/scripts/main.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const header = item.querySelector('.faq-header');
+            
+            header.addEventListener('click', () => {
+                const currentlyActive = document.querySelector('.faq-item.active');
+                
+                if (currentlyActive && currentlyActive !== item) {
+                    currentlyActive.classList.remove('active');
+                }
+                
+                item.classList.toggle('active');
+            });
+        });
+    });
+    </script>
 </body>
 </html> 

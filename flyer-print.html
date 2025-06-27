@@ -3,333 +3,365 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STARTPLATZ × MIFCOM - RTX 50 Serie KI-Workstations</title>
+    <title>STARTPLATZ × MIFCOM - RTX 50 Serie KI-Workstations (Print)</title>
     <style>
-        /* Print Setup */
-        @page {
-            size: A4;
-            margin: 0;
-        }
-        
+        /* Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         
+        /* Print-optimized styles */
         body {
             font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             color: #1A1A1A;
-            line-height: 1.5;
-            -webkit-print-color-adjust: exact;
-            print-color-adjust: exact;
-        }
-        
-        /* A4 Container */
-        .flyer {
-            width: 210mm;
-            height: 297mm;
-            position: relative;
-            overflow: hidden;
+            line-height: 1.4;
             background: white;
+            font-size: 12px;
         }
         
-        /* Header Section */
+        /* A4 Page Container */
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            padding: 15mm;
+            box-sizing: border-box;
+        }
+        
+        /* Header */
         .header {
-            background: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%);
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: linear-gradient(135deg, #1A1A1A 0%, #0A0A0A 100%);
             color: white;
-            padding: 20mm 15mm 15mm;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .header::before {
-            content: '';
-            position: absolute;
-            top: -100mm;
-            right: -50mm;
-            width: 200mm;
-            height: 200mm;
-            background: radial-gradient(circle, #A3D55F 0%, transparent 70%);
-            opacity: 0.1;
-        }
-        
-        .header::after {
-            content: '';
-            position: absolute;
-            bottom: -80mm;
-            left: -40mm;
-            width: 150mm;
-            height: 150mm;
-            background: radial-gradient(circle, #0080BB 0%, transparent 70%);
-            opacity: 0.1;
-        }
-        
-        .header-content {
-            position: relative;
-            z-index: 1;
+            border-radius: 12px;
         }
         
         .logos {
             display: flex;
             align-items: center;
-            gap: 10mm;
-            margin-bottom: 10mm;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 15px;
         }
         
         .logo {
-            height: 12mm;
-            object-fit: contain;
+            height: 30px;
         }
         
         .logo-separator {
-            font-size: 20pt;
+            font-size: 1.5rem;
             color: #A3D55F;
-            font-weight: bold;
+            font-weight: 800;
         }
         
         .headline {
-            font-size: 32pt;
-            font-weight: 800;
+            font-size: 2rem;
+            font-weight: 900;
             line-height: 1.1;
-            margin-bottom: 5mm;
-            letter-spacing: -0.5mm;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
         }
         
-        .headline .highlight {
-            background: linear-gradient(135deg, #A3D55F 0%, #0080BB 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .highlight {
+            color: #A3D55F;
         }
         
         .subheadline {
-            font-size: 14pt;
+            font-size: 0.9rem;
             opacity: 0.9;
-            margin-bottom: 8mm;
+            margin-bottom: 15px;
         }
         
-        .badge {
-            display: inline-block;
+        .hero-badge {
             background: #A3D55F;
             color: #0A0A0A;
-            padding: 2mm 8mm;
-            border-radius: 20mm;
-            font-weight: 700;
-            font-size: 11pt;
-            letter-spacing: 0.5mm;
-        }
-        
-        /* Benefits Bar */
-        .benefits-bar {
-            background: #F5F5F5;
-            padding: 8mm 15mm;
-            display: flex;
-            justify-content: space-around;
-            border-bottom: 2px solid #A3D55F;
-        }
-        
-        .benefit {
-            text-align: center;
-            flex: 1;
-        }
-        
-        .benefit-value {
-            font-size: 20pt;
+            padding: 8px 20px;
+            border-radius: 20px;
             font-weight: 800;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-block;
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            background: #F8F8F8;
+            border: 2px solid #A3D55F;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+        
+        .stat {
+            text-align: center;
+            padding: 10px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #E0E0E0;
+        }
+        
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 900;
             color: #A3D55F;
             display: block;
+            margin-bottom: 3px;
         }
         
-        .benefit-label {
-            font-size: 9pt;
+        .stat-label {
+            font-size: 0.7rem;
             color: #666;
             text-transform: uppercase;
-            letter-spacing: 0.3mm;
+            letter-spacing: 0.5px;
+            font-weight: 600;
         }
         
-        /* Main Content */
-        .content {
-            padding: 12mm 15mm;
+        /* Products Section */
+        .products-section {
+            flex: 1;
+            margin-bottom: 20px;
         }
         
-        /* Products Grid */
-        .products-title {
+        .section-title {
             text-align: center;
-            font-size: 20pt;
+            font-size: 1.4rem;
             font-weight: 800;
-            margin-bottom: 8mm;
+            margin-bottom: 20px;
             color: #1A1A1A;
         }
         
-        .products {
-            display: flex;
-            gap: 8mm;
-            margin-bottom: 12mm;
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
         }
         
-        .product {
-            flex: 1;
-            border: 1.5pt solid #E0E0E0;
-            border-radius: 4mm;
-            padding: 8mm;
+        .product-card {
+            background: white;
+            border: 2px solid #E0E0E0;
+            border-radius: 10px;
+            padding: 15px;
             text-align: center;
             position: relative;
-            background: white;
-            transition: all 0.3s;
         }
         
-        .product.featured {
+        .product-card.featured {
             border-color: #A3D55F;
-            border-width: 2pt;
-            background: linear-gradient(to bottom, rgba(163, 213, 95, 0.05) 0%, white 50%);
+            background: rgba(163, 213, 95, 0.05);
         }
         
         .product-badge {
             position: absolute;
-            top: -3mm;
+            top: -8px;
             left: 50%;
             transform: translateX(-50%);
             background: #A3D55F;
             color: #0A0A0A;
-            padding: 1mm 6mm;
-            border-radius: 10mm;
-            font-size: 8pt;
+            padding: 3px 12px;
+            border-radius: 10px;
+            font-size: 0.6rem;
             font-weight: 700;
             text-transform: uppercase;
         }
         
-        .product-gpu {
-            font-size: 16pt;
-            font-weight: 800;
-            color: #0080BB;
-            margin-bottom: 2mm;
+        .gpu-title {
+            font-size: 1.2rem;
+            font-weight: 900;
+            color: #A3D55F;
+            margin-bottom: 5px;
         }
         
-        .product-specs {
-            font-size: 9pt;
-            color: #666;
-            margin-bottom: 5mm;
-            line-height: 1.4;
-        }
-        
-        .product-specs strong {
+        .product-name {
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 12px;
             color: #1A1A1A;
-            display: block;
         }
         
-        .product-price-label {
-            font-size: 8pt;
+        .specs-list {
+            text-align: left;
+            margin-bottom: 12px;
+            background: #F8F8F8;
+            border-radius: 6px;
+            padding: 8px;
+        }
+        
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 2px 0;
+            font-size: 0.7rem;
+            border-bottom: 1px solid #E0E0E0;
+        }
+        
+        .spec-item:last-child {
+            border-bottom: none;
+        }
+        
+        .spec-label {
+            color: #666;
+        }
+        
+        .spec-value {
+            color: #1A1A1A;
+            font-weight: 600;
+        }
+        
+        .pricing {
+            margin-bottom: 10px;
+        }
+        
+        .price-label {
+            font-size: 0.6rem;
             color: #666;
             text-transform: uppercase;
-            display: block;
+            margin-bottom: 2px;
         }
         
-        .product-price {
-            font-size: 22pt;
-            font-weight: 800;
+        .price-value {
+            font-size: 1.3rem;
+            font-weight: 900;
             color: #A3D55F;
-            margin-bottom: 1mm;
+            margin-bottom: 3px;
         }
         
-        .product-savings {
-            font-size: 10pt;
+        .price-bonus {
+            font-size: 0.7rem;
             color: #0080BB;
             font-weight: 600;
         }
         
+        .cta-button {
+            background: #1A1A1A;
+            color: white;
+            padding: 6px 12px;
+            border: 2px solid #1A1A1A;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.7rem;
+            text-decoration: none;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+        
         /* Features Section */
-        .features {
-            background: #F9F9F9;
-            border-radius: 4mm;
-            padding: 8mm;
-            margin-bottom: 10mm;
+        .features-section {
+            background: #F8F8F8;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
         }
         
         .features-title {
-            font-size: 14pt;
-            font-weight: 700;
-            margin-bottom: 5mm;
             text-align: center;
+            font-size: 1.1rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: #1A1A1A;
         }
         
         .features-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4mm;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
         }
         
-        .feature {
+        .feature-item {
             display: flex;
-            align-items: center;
-            gap: 3mm;
-            font-size: 9pt;
+            align-items: flex-start;
+            gap: 8px;
+            padding: 8px;
+            background: white;
+            border-radius: 6px;
+            border: 1px solid #E0E0E0;
         }
         
         .feature-icon {
-            color: #A3D55F;
-            font-size: 14pt;
-            font-weight: bold;
-        }
-        
-        /* CTA Section */
-        .cta {
-            background: linear-gradient(135deg, #1A1A1A 0%, #0A0A0A 100%);
-            color: white;
-            padding: 10mm 15mm;
-            text-align: center;
-            border-radius: 4mm;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cta::before {
-            content: '';
-            position: absolute;
-            top: -50mm;
-            left: -50mm;
-            width: 100mm;
-            height: 100mm;
-            background: radial-gradient(circle, #A3D55F 0%, transparent 70%);
-            opacity: 0.1;
-        }
-        
-        .cta-content {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .cta-title {
-            font-size: 18pt;
-            font-weight: 800;
-            margin-bottom: 3mm;
-        }
-        
-        .cta-subtitle {
-            font-size: 11pt;
-            opacity: 0.9;
-            margin-bottom: 8mm;
-        }
-        
-        .contact-info {
+            width: 24px;
+            height: 24px;
+            background: rgba(163, 213, 95, 0.2);
+            border-radius: 6px;
             display: flex;
-            justify-content: space-around;
-            margin-bottom: 8mm;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+            border: 1px solid #A3D55F;
+        }
+        
+        .feature-content h4 {
+            font-size: 0.8rem;
+            margin-bottom: 2px;
+            color: #1A1A1A;
+            font-weight: 700;
+        }
+        
+        .feature-content p {
+            font-size: 0.7rem;
+            color: #666;
+            line-height: 1.3;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: #1A1A1A;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 10px;
+        }
+        
+        .contact-title {
+            font-size: 1.2rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+        
+        .contact-subtitle {
+            font-size: 0.8rem;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 15px;
         }
         
         .contact-item {
-            text-align: center;
+            padding: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
         }
         
         .contact-label {
-            font-size: 8pt;
-            opacity: 0.7;
+            font-size: 0.6rem;
+            opacity: 0.8;
             text-transform: uppercase;
-            letter-spacing: 0.3mm;
+            letter-spacing: 0.5px;
+            margin-bottom: 3px;
         }
         
         .contact-value {
-            font-size: 12pt;
+            font-size: 0.8rem;
             font-weight: 600;
             color: #A3D55F;
         }
@@ -338,196 +370,372 @@
             background: #A3D55F;
             color: #0A0A0A;
             display: inline-block;
-            padding: 3mm 10mm;
-            border-radius: 3mm;
-            font-size: 14pt;
-            font-weight: 800;
-            letter-spacing: 0.5mm;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 1rem;
+            font-weight: 900;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        
+        .promo-note {
+            font-size: 0.7rem;
+            opacity: 0.8;
+            font-style: italic;
         }
         
         /* Footer */
         .footer {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 5mm 15mm;
-            background: #F5F5F5;
-            font-size: 8pt;
+            background: #F8F8F8;
+            padding: 10px;
+            text-align: center;
+            font-size: 0.6rem;
             color: #666;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            border-radius: 6px;
+            margin-top: auto;
         }
         
-        /* Screen styles */
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 5px;
+        }
+        
+        .footer-links a {
+            color: #666;
+            text-decoration: none;
+        }
+        
+        /* Print Styles */
+        @media print {
+            @page {
+                margin: 15mm;
+                size: A4 portrait;
+            }
+            
+            body {
+                font-size: 11px;
+            }
+            
+            .page {
+                width: 100%;
+                min-height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            
+            .cta-button {
+                border: 2px solid #1A1A1A !important;
+                background: white !important;
+                color: #1A1A1A !important;
+            }
+        }
+        
+        /* Screen Preview */
         @media screen {
             body {
                 background: #E0E0E0;
                 padding: 20px;
             }
             
-            .flyer {
-                margin: 0 auto;
-                box-shadow: 0 0 20px rgba(0,0,0,0.3);
+            .page {
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             }
         }
     </style>
 </head>
 <body>
-    <div class="flyer">
+    <div class="page">
         <!-- Header -->
-        <div class="header">
-            <div class="header-content">
-                <div class="logos">
-                    <img src="src/assets/icons/aihublogo.png" alt="STARTPLATZ AI Hub" class="logo">
-                    <span class="logo-separator">×</span>
-                    <img src="src/assets/icons/Logo_Rechteck_white.png" alt="MIFCOM" class="logo">
-                </div>
-                
-                <h1 class="headline">
-                    Beschleunigen Sie Ihre KI-Entwicklung<br>
-                    mit <span class="highlight">RTX 50 Serie</span>
-                </h1>
-                
-                <p class="subheadline">
-                    Next-Generation NVIDIA Blackwell Architektur Workstations<br>
-                    konfiguriert für maximale KI/ML Performance
-                </p>
-                
-                <span class="badge">100€ STARTGUTHABEN FÜR STARTPLATZ MITGLIEDER</span>
+        <header class="header">
+            <div class="logos">
+                <img src="src/assets/images/Startplatz_logo.png" alt="STARTPLATZ AI Hub" class="logo">
+                <span class="logo-separator">×</span>
+                <img src="src/assets/images/mifcom_logo.png" alt="MIFCOM" class="logo">
             </div>
-        </div>
+            
+            <h1 class="headline">
+                Entfessle <span class="highlight">KI-Power</span> für dein Team
+            </h1>
+            
+            <p class="subheadline">
+                Nutze die revolutionäre RTX 50 Serie mit Blackwell-Architektur für maximale KI/ML-Performance
+            </p>
+            
+            <div class="hero-badge">
+                100€ Geschenkt
+            </div>
+        </header>
         
-        <!-- Benefits Bar -->
-        <div class="benefits-bar">
-            <div class="benefit">
-                <span class="benefit-value">3,2×</span>
-                <span class="benefit-label">Schnelleres Training</span>
+        <!-- Performance Stats -->
+        <section class="stats-section">
+            <div class="stats-grid">
+                <div class="stat">
+                    <span class="stat-value">3,2×</span>
+                    <span class="stat-label">Schneller</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">75%</span>
+                    <span class="stat-label">TCO Ersparnis</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">32GB</span>
+                    <span class="stat-label">GDDR7</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">100%</span>
+                    <span class="stat-label">Sicherheit</span>
+                </div>
             </div>
-            <div class="benefit">
-                <span class="benefit-value">75%</span>
-                <span class="benefit-label">Niedrigere TCO</span>
-            </div>
-            <div class="benefit">
-                <span class="benefit-value">32GB</span>
-                <span class="benefit-label">GDDR7 VRAM</span>
-            </div>
-            <div class="benefit">
-                <span class="benefit-value">100%</span>
-                <span class="benefit-label">Datenkontrolle</span>
-            </div>
-        </div>
+        </section>
         
-        <!-- Main Content -->
-        <div class="content">
-            <!-- Products -->
-            <h2 class="products-title">Wählen Sie Ihre Konfiguration</h2>
+        <!-- Products Section -->
+        <section class="products-section">
+            <h2 class="section-title">Wähle deine KI-Powerstation</h2>
             
-            <div class="products">
-                <div class="product">
-                    <div class="product-gpu">RTX 5070</div>
-                    <div class="product-specs">
-                        <strong>KI Explorer</strong>
-                        12GB GDDR7 • 6.144 CUDA<br>
-                        Intel Core Ultra 7 • 32GB DDR5<br>
-                        2TB NVMe Gen5
-                    </div>
-                    <span class="product-price-label">Ab</span>
-                    <div class="product-price">€3.999</div>
-                    <div class="product-savings">+ 100€ Bonus</div>
-                </div>
-                
-                <div class="product featured">
-                    <span class="product-badge">EMPFOHLEN</span>
-                    <div class="product-gpu">RTX 5080</div>
-                    <div class="product-specs">
-                        <strong>KI Professional</strong>
-                        16GB GDDR7 • 10.752 CUDA<br>
-                        Intel Core Ultra 9 • 64GB DDR5<br>
-                        4TB NVMe Gen5
-                    </div>
-                    <span class="product-price-label">Ab</span>
-                    <div class="product-price">€5.999</div>
-                    <div class="product-savings">+ 100€ Bonus</div>
-                </div>
-                
-                <div class="product">
-                    <div class="product-gpu">RTX 5090</div>
-                    <div class="product-specs">
-                        <strong>KI Enterprise</strong>
-                        32GB GDDR7 • 21.760 CUDA<br>
-                        AMD Ryzen 9 9950X • 128GB<br>
-                        8TB NVMe RAID
-                    </div>
-                    <span class="product-price-label">Ab</span>
-                    <div class="product-price">€9.999</div>
-                    <div class="product-savings">+ 100€ Bonus</div>
-                </div>
-            </div>
-            
-            <!-- Features -->
-            <div class="features">
-                <h3 class="features-title">Was ist enthalten</h3>
-                <div class="features-grid">
-                    <div class="feature">
-                        <span class="feature-icon">✓</span>
-                        <span>Vorinstallierter KI/ML Software Stack</span>
-                    </div>
-                    <div class="feature">
-                        <span class="feature-icon">✓</span>
-                        <span>3-5 Jahre Garantieoptionen</span>
-                    </div>
-                    <div class="feature">
-                        <span class="feature-icon">✓</span>
-                        <span>Custom Wasserkühlung</span>
-                    </div>
-                    <div class="feature">
-                        <span class="feature-icon">✓</span>
-                        <span>Kostenloser Versand in Deutschland</span>
-                    </div>
-                    <div class="feature">
-                        <span class="feature-icon">✓</span>
-                        <span>Prioritätsbau (3-5 Tage)</span>
-                    </div>
-                    <div class="feature">
-                        <span class="feature-icon">✓</span>
-                        <span>24/7 Technischer Support</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- CTA -->
-            <div class="cta">
-                <div class="cta-content">
-                    <h2 class="cta-title">Bereit, Ihre KI zu beschleunigen?</h2>
-                    <p class="cta-subtitle">Erhalten Sie Expertenkonfigurationsberatung und exklusive Preise</p>
+            <div class="products-grid">
+                <!-- KI Explorer -->
+                <div class="product-card">
+                    <div class="gpu-title">RTX 5070</div>
+                    <h3 class="product-name">KI Explorer</h3>
                     
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <div class="contact-label">Website</div>
-                            <div class="contact-value">mifcom.de/startplatz</div>
+                    <div class="specs-list">
+                        <div class="spec-item">
+                            <span class="spec-label">GPU</span>
+                            <span class="spec-value">12GB GDDR7</span>
                         </div>
-                        <div class="contact-item">
-                            <div class="contact-label">E-Mail</div>
-                            <div class="contact-value">ai@mifcom.de</div>
+                        <div class="spec-item">
+                            <span class="spec-label">CUDA</span>
+                            <span class="spec-value">6.144 Cores</span>
                         </div>
-                        <div class="contact-item">
-                            <div class="contact-label">Telefon</div>
-                            <div class="contact-value">+49 6151 6291630</div>
+                        <div class="spec-item">
+                            <span class="spec-label">CPU</span>
+                            <span class="spec-value">Intel Ultra 7</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">RAM</span>
+                            <span class="spec-value">32GB DDR5</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Storage</span>
+                            <span class="spec-value">2TB NVMe</span>
                         </div>
                     </div>
                     
-                    <div class="promo-banner">100€ STARTGUTHABEN</div>
+                    <div class="pricing">
+                        <div class="price-label">Ab</div>
+                        <div class="price-value">€3.999</div>
+                        <div class="price-bonus">+ 100€ Bonus</div>
+                    </div>
+                    
+                    <a href="#kontakt" class="cta-button">Konfigurieren</a>
+                </div>
+                
+                <!-- KI Professional -->
+                <div class="product-card featured">
+                    <div class="product-badge">Beliebt</div>
+                    <div class="gpu-title">RTX 5080</div>
+                    <h3 class="product-name">KI Professional</h3>
+                    
+                    <div class="specs-list">
+                        <div class="spec-item">
+                            <span class="spec-label">GPU</span>
+                            <span class="spec-value">16GB GDDR7</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">CUDA</span>
+                            <span class="spec-value">10.752 Cores</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">CPU</span>
+                            <span class="spec-value">Intel Ultra 9</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">RAM</span>
+                            <span class="spec-value">64GB DDR5</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Storage</span>
+                            <span class="spec-value">4TB RAID</span>
+                        </div>
+                    </div>
+                    
+                    <div class="pricing">
+                        <div class="price-label">Ab</div>
+                        <div class="price-value">€5.999</div>
+                        <div class="price-bonus">+ 100€ Bonus</div>
+                    </div>
+                    
+                    <a href="#kontakt" class="cta-button">Konfigurieren</a>
+                </div>
+                
+                <!-- KI Enterprise -->
+                <div class="product-card">
+                    <div class="gpu-title">RTX 5090</div>
+                    <h3 class="product-name">KI Enterprise</h3>
+                    
+                    <div class="specs-list">
+                        <div class="spec-item">
+                            <span class="spec-label">GPU</span>
+                            <span class="spec-value">32GB GDDR7</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">CUDA</span>
+                            <span class="spec-value">21.760 Cores</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">CPU</span>
+                            <span class="spec-value">AMD 9950X</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">RAM</span>
+                            <span class="spec-value">128GB ECC</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Storage</span>
+                            <span class="spec-value">8TB Array</span>
+                        </div>
+                    </div>
+                    
+                    <div class="pricing">
+                        <div class="price-label">Ab</div>
+                        <div class="price-value">€9.999</div>
+                        <div class="price-bonus">+ 100€ Bonus</div>
+                    </div>
+                    
+                    <a href="#kontakt" class="cta-button">Konfigurieren</a>
                 </div>
             </div>
-        </div>
+        </section>
+        
+        <!-- Features Section -->
+        <section class="features-section">
+            <h3 class="features-title">Warum MIFCOM × STARTPLATZ?</h3>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🚀</div>
+                    <div class="feature-content">
+                        <h4>RTX 50 Serie</h4>
+                        <p>Neueste Blackwell-Architektur</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">🛡️</div>
+                    <div class="feature-content">
+                        <h4>3 Jahre Garantie</h4>
+                        <p>Erweiterte Garantie & Support</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">⚡</div>
+                    <div class="feature-content">
+                        <h4>KI-Ready Setup</h4>
+                        <p>CUDA, PyTorch vorinstalliert</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">🔧</div>
+                    <div class="feature-content">
+                        <h4>Maßgeschneidert</h4>
+                        <p>Individuelle Konfiguration</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">📦</div>
+                    <div class="feature-content">
+                        <h4>Express-Lieferung</h4>
+                        <p>Prioritätsbau in 3-5 Tagen</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">💰</div>
+                    <div class="feature-content">
+                        <h4>0% Finanzierung</h4>
+                        <p>Flexible Zahlungsoptionen</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section class="contact-section" id="kontakt">
+            <h2 class="contact-title">Bereit für KI-Power?</h2>
+            <p class="contact-subtitle">
+                Erhalte deine persönliche Beratung und sichere dir dein STARTPLATZ Startguthaben
+            </p>
+            
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-label">Website</div>
+                    <div class="contact-value">mifcom.de/startplatz</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label">E-Mail</div>
+                    <div class="contact-value">ai@mifcom.de</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label">Telefon</div>
+                    <div class="contact-value">+49 6151 6291630</div>
+                </div>
+            </div>
+            
+            <div class="promo-banner">
+                STARTPLATZ10
+            </div>
+            <p class="promo-note">
+                Promo-Code für 100€ Startguthaben
+            </p>
+        </section>
         
         <!-- Footer -->
-        <div class="footer">
-            <span>Gültig bis 31. Dezember 2025</span>
-            <span>© 2025 MIFCOM GmbH × STARTPLATZ</span>
-        </div>
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="https://mifcom.de/datenschutz">Datenschutz</a>
+                <a href="https://mifcom.de/agb">AGB</a>
+                <a href="https://startplatz.de">STARTPLATZ</a>
+            </div>
+            <p>
+                Gültig bis 31.12.2025 | © 2025 MIFCOM GmbH × STARTPLATZ
+            </p>
+        </footer>
     </div>
+    
+    <script>
+        // Auto-print when opened (optional)
+        // window.onload = function() { window.print(); };
+        
+        // Print button for screen view
+        if (!window.matchMedia('print').matches) {
+            const printBtn = document.createElement('button');
+            printBtn.innerHTML = '🖨️ Drucken';
+            printBtn.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background: #A3D55F;
+                color: #0A0A0A;
+                padding: 12px 20px;
+                border: none;
+                border-radius: 25px;
+                font-weight: 700;
+                cursor: pointer;
+                box-shadow: 0 5px 15px rgba(163, 213, 95, 0.4);
+                z-index: 1000;
+                font-size: 0.8rem;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            `;
+            printBtn.onclick = () => window.print();
+            document.body.appendChild(printBtn);
+        }
+    </script>
 </body>
 </html> 
